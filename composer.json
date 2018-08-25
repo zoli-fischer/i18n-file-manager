@@ -5,23 +5,6 @@
         "components/font-awesome": "^5.0"
     },
     "scripts": {
-        "post-package-install": [
-            "vendor/twbs::postPackageInstall",
-            "vendor/components::postPackageInstall",
-            "mkdir -p ./assets/js/vendor",
-            "mkdir -p ./assets/css/vendor",            
-            "mkdir -p ./assets/js/vendor/bootstrap",
-            "cp -f ./vendor/twbs/bootstrap/dist/js/*.*  ./assets/js/vendor/bootstrap",
-            "mkdir -p ./assets/css/vendor/bootstrap",
-            "cp -f ./vendor/twbs/bootstrap/dist/css/*.*  ./assets/css/vendor/bootstrap",
-            "mkdir -p ./assets/js/vendor/jquery",
-            "cp -f ./vendor/components/jquery/jquery.min.* ./assets/js/vendor/jquery",
-            "mkdir -p ./assets/css/vendor/font-awesome",
-            "mkdir -p ./assets/css/vendor/font-awesome/css",
-            "mkdir -p ./assets/css/vendor/font-awesome/webfonts",
-            "cp -f ./vendor/components/font-awesome/css/*.* ./assets/css/vendor/font-awesome/css",
-            "cp -f ./vendor/components/font-awesome/webfonts/*.* ./assets/css/vendor/font-awesome/webfonts"
-        ],
         "post-package-update": [
             "mkdir -p ./assets/js/vendor",
             "mkdir -p ./assets/css/vendor",
