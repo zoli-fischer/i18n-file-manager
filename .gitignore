@@ -1,0 +1,8 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# composer
+composer.phar
+/vendor
+/assets/css/vendor
+/assets/js/vendor
+
