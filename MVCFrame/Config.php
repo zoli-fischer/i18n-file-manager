@@ -14,9 +14,7 @@ class Config {
         $data = json_decode($content,true);
         if ( json_last_error() !== JSON_ERROR_NONE )
             MVCFrame\App::TriggerError('Config JSON parse error. '.json_last_error_msg(), E_USER_ERROR);
-        self::$data = array_merge( [ 
-            "environment" => "development"
-        ], $data );
+        self::$data = isset($data[ MVCFrame\Environment::Environment() ]) ? $data[ MVCFrame\Environment::Environment() ] : [];
     }
 
     public static function Get( $index ) {
@@ -42,6 +40,18 @@ class Config {
             }
         }
         return true;
+    }
+
+    public static function Set( $index, $confValue ) {
+        if ( self::IsSet( $index ) ) {
+            $indexes = preg_split("#[\s/]+#", $index);
+            $data = &self::$data;
+            foreach ( $indexes as $value )
+                $data = &$data[$value];
+            return $data = $confValue;
+        } else {
+            MVCFrame\App::TriggerError('Config variable not found: '.$index);
+        }
     }
 
 }

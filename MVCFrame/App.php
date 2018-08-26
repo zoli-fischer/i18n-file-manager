@@ -9,8 +9,7 @@ class App {
 
     private static $controllers = [];
 
-    static function Init() {
-        register_shutdown_function([ __CLASS__, 'OnShutdown' ]);
+    public static function Init() {
         spl_autoload_register('self::Autoloader');
     }
 
@@ -21,8 +20,13 @@ class App {
         }
     }
 
-    public static function Route( $path, $view ) {
+    private static function InitRouter() {
         self::Init();
+        register_shutdown_function([ __CLASS__, 'OnShutdown' ]);
+    }
+
+    public static function Route( $path, $view ) {
+        self::InitRouter();
         return $path === $_SERVER['PATH_INFO'] && self::View( $view );
     }
 
@@ -52,7 +56,7 @@ class App {
 
     public static function TriggerError( $msg, $error_type = E_USER_NOTICE ) {
         if ( $error_type === E_USER_ERROR ) {
-            if ( MVCFrame\Config::Get('environment') === 'development' ) {
+            if ( MVCFrame\Environment::isDevelopment() ) {
                 error_reporting(E_ALL);
                 ini_set('display_errors','on');
             }

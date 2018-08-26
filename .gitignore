@@ -5,4 +5,7 @@ composer.phar
 /vendor
 /assets/css/vendor
 /assets/js/vendor
+
+# publish
 /.publish/git.log
+.environment

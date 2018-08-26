@@ -9,31 +9,31 @@
             "mkdir -p ./assets/js/vendor",
             "mkdir -p ./assets/css/vendor",
             "mkdir -p ./assets/js/vendor/bootstrap",
-            "cp -s -f ./vendor/twbs/bootstrap/dist/js/*.*  ./assets/js/vendor/bootstrap 2>/dev/null || :",
+            "cp -f ./vendor/twbs/bootstrap/dist/js/*.*  ./assets/js/vendor/bootstrap 2>/dev/null || :",
             "mkdir -p ./assets/css/vendor/bootstrap",
-            "cp -s -f ./vendor/twbs/bootstrap/dist/css/*.*  ./assets/css/vendor/bootstrap 2>/dev/null || :",
+            "cp -f ./vendor/twbs/bootstrap/dist/css/*.*  ./assets/css/vendor/bootstrap 2>/dev/null || :",
             "mkdir -p ./assets/js/vendor/jquery",
-            "cp -s -f ./vendor/components/jquery/jquery.min.* ./assets/js/vendor/jquery 2>/dev/null || :",
+            "cp -f ./vendor/components/jquery/jquery.min.* ./assets/js/vendor/jquery 2>/dev/null || :",
             "mkdir -p ./assets/css/vendor/font-awesome",
             "mkdir -p ./assets/css/vendor/font-awesome/css 2>/dev/null || :",
             "mkdir -p ./assets/css/vendor/font-awesome/webfonts 2>/dev/null || :",
-            "cp -s -f ./vendor/components/font-awesome/css/*.* ./assets/css/vendor/font-awesome/css 2>/dev/null || :",
-            "cp -s -f ./vendor/components/font-awesome/webfonts/*.* ./assets/css/vendor/font-awesome/webfonts 2>/dev/null || :"
+            "cp -f ./vendor/components/font-awesome/css/*.* ./assets/css/vendor/font-awesome/css 2>/dev/null || :",
+            "cp -f ./vendor/components/font-awesome/webfonts/*.* ./assets/css/vendor/font-awesome/webfonts 2>/dev/null || :"
         ],
         "post-package-update": [
             "mkdir -p ./assets/js/vendor",
             "mkdir -p ./assets/css/vendor",
             "mkdir -p ./assets/js/vendor/bootstrap",
-            "cp -s -f ./vendor/twbs/bootstrap/dist/js/*.*  ./assets/js/vendor/bootstrap 2>/dev/null || :",
+            "cp -f ./vendor/twbs/bootstrap/dist/js/*.*  ./assets/js/vendor/bootstrap 2>/dev/null || :",
             "mkdir -p ./assets/css/vendor/bootstrap",
-            "cp -s -f ./vendor/twbs/bootstrap/dist/css/*.*  ./assets/css/vendor/bootstrap 2>/dev/null || :",
+            "cp -f ./vendor/twbs/bootstrap/dist/css/*.*  ./assets/css/vendor/bootstrap 2>/dev/null || :",
             "mkdir -p ./assets/js/vendor/jquery",
-            "cp -s -f ./vendor/components/jquery/jquery.min.* ./assets/js/vendor/jquery 2>/dev/null || :",
+            "cp -f ./vendor/components/jquery/jquery.min.* ./assets/js/vendor/jquery 2>/dev/null || :",
             "mkdir -p ./assets/css/vendor/font-awesome",
             "mkdir -p ./assets/css/vendor/font-awesome/css 2>/dev/null || :",
             "mkdir -p ./assets/css/vendor/font-awesome/webfonts 2>/dev/null || :",
-            "cp -s -f ./vendor/components/font-awesome/css/*.* ./assets/css/vendor/font-awesome/css 2>/dev/null || :",
-            "cp -s -f ./vendor/components/font-awesome/webfonts/*.* ./assets/css/vendor/font-awesome/webfonts 2>/dev/null || :"
+            "cp -f ./vendor/components/font-awesome/css/*.* ./assets/css/vendor/font-awesome/css 2>/dev/null || :",
+            "cp -f ./vendor/components/font-awesome/webfonts/*.* ./assets/css/vendor/font-awesome/webfonts 2>/dev/null || :"
         ]
     }
 }
