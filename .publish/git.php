@@ -56,7 +56,7 @@ if (!$allowed) {
 
     // Set environment
     require_once(__DIR__ . '/../MVCFrame/App.php');
-    MVCFrame\Environment::Load( __DIR__ . '/.environment' );
+    MVCFrame\Environment::Load( __DIR__ . '/../.environment' );
     if ( !MVCFrame\Environment::isProduction() )
         file_put_contents( __DIR__ . '/../.environment', 'production' );
 
