@@ -55,9 +55,10 @@ if (!$allowed) {
     file_put_contents ('git.log',$log,FILE_APPEND);
 
     // Set environment
-require_once(__DIR__ . '/../MVCFrame/App.php');
-if ( !MVCFrame\Environment::isProduction() )
-    file_put_contents( __DIR__ . '/../.environment', 'production' );
+    require_once(__DIR__ . '/../MVCFrame/App.php');
+    MVCFrame\Environment::Load( __DIR__ . '/.environment' );
+    if ( !MVCFrame\Environment::isProduction() )
+        file_put_contents( __DIR__ . '/../.environment', 'production' );
 
 }
 

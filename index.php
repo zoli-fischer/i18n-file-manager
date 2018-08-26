@@ -7,4 +7,3 @@ MVCFrame\Environment::Load( __DIR__ . '/.environment' );
 MVCFrame\Config::LoadJSON( __DIR__ . '/config.json' );
 
 MVCFrame\App::Route('/','Index');
-
