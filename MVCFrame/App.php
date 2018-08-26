@@ -3,6 +3,8 @@
 namespace MVCFrame;
 use MVCFrame;
 
+MVCFrame\App::Init();
+
 class App {
 
     private static $controllers = [];
@@ -12,10 +14,10 @@ class App {
         spl_autoload_register('self::Autoloader');
     }
 
-    private static function Autoloader( $class ) {        
+    private static function Autoloader( $class ) {
         if ( explode('\\',$class)[0] === 'MVCFrame' ) {
             $filename = realpath(__DIR__.'/..') . '/' . str_replace('\\', '/', $class) . '.php';
-            require_once($filename);        
+            require_once($filename);
         }
     }
 
@@ -40,7 +42,7 @@ class App {
 
     private static $send404OnShutdown = true;
 
-    public static function OnShutdown() {        
+    public static function OnShutdown() {
         if ( self::$send404OnShutdown && count(self::$controllers) == 0 && MVCFrame\Respons::GetCode() === null && MVCFrame\Respons::GetMessage() === null && MVCFrame\Respons::GetRedirectUrl() === null ) {
             MVCFrame\Respons::SetCode(404);
             MVCFrame\Respons::SetMessage("Error 404. Page not found...");
@@ -50,9 +52,13 @@ class App {
 
     public static function TriggerError( $msg, $error_type = E_USER_NOTICE ) {
         if ( $error_type === E_USER_ERROR ) {
+            if ( MVCFrame\Config::Get('environment') === 'development' ) {
+                error_reporting(E_ALL);
+                ini_set('display_errors','on');
+            }
             self::$send404OnShutdown = false;
         }
-        trigger_error($msg, $error_type);        
+        trigger_error($msg, $error_type);
     }
 
 }
