@@ -1,5 +1,5 @@
 {
-    "environment": "test",
+    "environment": "development",
     "development": {
 
     },
