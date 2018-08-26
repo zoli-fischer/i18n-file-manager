@@ -41,7 +41,7 @@ if (!$allowed) {
 
     foreach($commands AS $command){
         // Run it
-        //exec($command,$out);
+        exec($command,$out);
         $tmp = implode("\n",$out);
         // Output
         echo "<span>$</span> <span>{$command}\n</span>";
