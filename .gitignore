@@ -5,4 +5,4 @@ composer.phar
 /vendor
 /assets/css/vendor
 /assets/js/vendor
-
+/.publish/git.log
