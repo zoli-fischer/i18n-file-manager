@@ -5,11 +5,15 @@ use MVCFrame;
 
 class Config {
 
+    public static function Define( $name, $value ) {
+        define( __NAMESPACE__ . '\\Config\\' . $name, $value );
+    }
+
     private static $data = [];
 
     public static function LoadJSON( $filepath ) {
         $content = file_get_contents($filepath);
-        if ( $content === false )
+        if ( !$content )
             MVCFrame\App::TriggerError('Unable to load config JSON: '.$filepath, E_USER_ERROR);
         $data = json_decode($content,true);
         if ( json_last_error() !== JSON_ERROR_NONE )

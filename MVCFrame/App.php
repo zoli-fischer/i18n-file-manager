@@ -7,10 +7,13 @@ MVCFrame\App::Init();
 
 class App {
 
-    private static $controllers = [];
+    private static $initialized = false;
 
     public static function Init() {
-        spl_autoload_register('self::Autoloader');
+        if ( !self::$initialized ) {
+            self::$initialized = true;
+            spl_autoload_register(__NAMESPACE__ . '\App::Autoloader');
+        }
     }
 
     private static function Autoloader( $class ) {
@@ -29,6 +32,8 @@ class App {
         self::InitRouter();
         return $path === $_SERVER['PATH_INFO'] && self::View( $view );
     }
+
+    private static $controllers = [];
 
     public static function View( $view, $options = [] ) {
         $viewpath = realpath(__DIR__ . '/View/'. MVCFrame\StringFormatter::ToCamelCase($view) . '.php');

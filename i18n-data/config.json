@@ -1,0 +1,25 @@
+{
+    "languages": {
+        "en_US": {
+            "name": "English",
+            "prular_rule": 1,
+            "dec_point": ".",
+            "thousands_sep": ".",
+            "date_format": "d.m.Y"
+        },
+        "da_DK": {
+            "name": "Danish",
+            "prular_rule": 1,
+            "dec_point": ".",
+            "thousands_sep": ".",
+            "date_format": "d.m.Y"
+        },
+        "de_DE": {
+            "name": "German",
+            "prular_rule": 1,
+            "dec_point": ".",
+            "thousands_sep": ".",
+            "date_format": "d.m.Y"
+        }
+    }
+}

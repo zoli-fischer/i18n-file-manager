@@ -14,7 +14,7 @@ class StringFormatter {
         }, $str);
     }
 
-    public static function ToHTMLSafe($string) {
+    public static function ToHtmlSafe($string) {
         return htmlspecialchars($string);
     }
 

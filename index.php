@@ -1,10 +1,16 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors','on');
+
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once(__DIR__ . '/MVCFrame/App.php');
+require_once(__DIR__ . '/I18NFM/Main.php');
+require_once(__DIR__ . '/config.php');
 
-MVCFrame\Environment::Load( __DIR__ . '/.environment' );
-MVCFrame\Config::LoadJSON( __DIR__ . '/config.json' );
+I18NFM\ConfigFile::Load();
+
+print_r( I18NFM\Languages::GetAll() );
 
 MVCFrame\App::Route('/','Index');
 
