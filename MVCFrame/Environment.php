@@ -12,6 +12,11 @@ class Environment {
         if ( $content === false )
             MVCFrame\App::TriggerError('Unable to load environment: '.$filepath, E_USER_ERROR);
         self::$environment = $content;
+
+        if ( self::isDevelopment() ) {
+            error_reporting(E_ALL);
+            ini_set('display_errors','on');
+        }
     }
 
     public static function isDevelopment() {

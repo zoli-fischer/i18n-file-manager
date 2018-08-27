@@ -55,13 +55,8 @@ class App {
     }
 
     public static function TriggerError( $msg, $error_type = E_USER_NOTICE ) {
-        if ( $error_type === E_USER_ERROR ) {
-            if ( MVCFrame\Environment::isDevelopment() ) {
-                error_reporting(E_ALL);
-                ini_set('display_errors','on');
-            }
+        if ( $error_type === E_USER_ERROR )            
             self::$send404OnShutdown = false;
-        }
         trigger_error($msg, $error_type);
     }
 

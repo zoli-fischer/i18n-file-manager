@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?=$this->GetOption('title')?></title>
+    <title><?=MVCFrame\StringFormatter::ToHTMLSafe($this->GetTitle())?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="stylesheet" href="assets/css/vendor/font-awesome/css/fontawesome-all.css" />

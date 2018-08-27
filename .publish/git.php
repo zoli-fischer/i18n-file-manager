@@ -50,15 +50,19 @@ if (!$allowed) {
         $log  .= "$ $command\n".trim($tmp)."\n";
     }
 
-    $log .= "\n";
-
-    file_put_contents ('git.log',$log,FILE_APPEND);
-
     // Set environment
     require_once(__DIR__ . '/../MVCFrame/App.php');
     MVCFrame\Environment::Load( __DIR__ . '/../.environment' );
     if ( !MVCFrame\Environment::isProduction() )
-        file_put_contents( __DIR__ . '/../.environment', 'production' );
+        if ( file_put_contents( __DIR__ . '/../.environment', 'production' ) ) {
+            $log .= "Environment is set to production";
+        } else {
+            $log .= "Unable to set environment to production";
+        }
+
+    $log .= "\n";
+
+    file_put_contents ('git.log',$log,FILE_APPEND);
 
 }
 

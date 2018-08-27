@@ -37,7 +37,7 @@ class Controller {
 
     public function Partial( $view, $options = [] ) {
         $viewpath = realpath(__DIR__ . '/View/Partial/'. MVCFrame\StringFormatter::ToCamelCase($view) . '.php');
-        $ctrlpath = realpath(__DIR__ . '/Controller/'. MVCFrame\StringFormatter::ToCamelCase($view) . '.php');        
+        $ctrlpath = realpath(__DIR__ . '/Controller/Partial/'. MVCFrame\StringFormatter::ToCamelCase($view) . '.php');        
         if ( file_exists($viewpath) ) {
             $controllerClass = file_exists($ctrlpath) ? "MVCFrame\\Controller\\Partial\\".MVCFrame\StringFormatter::ToCamelCase($view) : "MVCFrame\\ControllerPartial";
             $controller = new $controllerClass( $view, $options );
