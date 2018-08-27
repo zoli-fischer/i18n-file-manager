@@ -10,7 +10,5 @@ require_once(__DIR__ . '/config.php');
 
 I18NFM\ConfigFile::Load();
 
-print_r( I18NFM\Languages::GetAll() );
-
 MVCFrame\App::Route('/','Index');
 
