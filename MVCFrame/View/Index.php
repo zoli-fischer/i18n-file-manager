@@ -62,10 +62,6 @@
         </div>
     </div>
 
-    <?php
-    print_r( I18NFM\Languages::GetAll() );
-    ?>
-
     <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
