@@ -28,7 +28,10 @@
             <div class="col-sm-12">
                 <div class="table-responsive">
                     <table class="table table-striped">
-                        <caption>Languages: en, da, de</caption>
+                        <caption>Languages: 
+                            <?=$this->printLanguages();?> 
+                            <a href="javascript:{}" data-toggle="modal" data-target="#addLanguageModal" title="" class="badge badge-pill badge-secondary"><i class="fas fa-plus"></i> Add</a>
+                        </caption>
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col" style="width: 100%">Collection</th>
@@ -86,6 +89,60 @@
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addLanguageModal" tabindex="-1" role="dialog" aria-labelledby="addLanguageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addLanguageModalLabel">Add language </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="formIndex">Index</label>
+                                <input type="text" id="formIndex" name="index" class="form-control">
+                                <small class="form-text text-muted">en, da, en_US</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="formName">Name</label>
+                                <input type="text" id="formName" name="name" class="form-control">
+                                <small class="form-text text-muted">English, Dansk</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="formPrularRule">Plural rule</label>
+                                <select class="form-control" id="formPrularRule" name="plural_rule">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formDecPoint">Dec. point</label>
+                                <input type="text" id="formDecPoint" class="form-control" name="dec_point">
+                            </div>
+                            <div class="form-group">
+                                <label for="formThousandSep">Thousands sep.</label>
+                                <input type="text" id="formThousandSep" class="form-control" name="thousands_sep">
+                            </div>
+                            <div class="form-group">
+                                <label for="formDateFormat">Date format</label>
+                                <input type="text" id="formDateFormat" class="form-control" name="date_format">
+                                <small class="form-text text-muted">d.m.y, Y/m/d</small>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
                 </div>
             </div>
         </div>
