@@ -11,6 +11,7 @@ class Index extends MVCFrame\Controller {
         foreach ( I18NFM\Languages::GetAll() as $language )
             $buffer[] = '<a href="javascript:{}" title="Edit" data-toggle="modal" data-target="#addLanguageModal" 
 data-index="'.$language->index().'"
+data-default="'.( $language->get('default') ? 1 : 0 ).'"
 data-plural_rule="'.$language->get('plural_rule').'"
 data-dec_point="'.$language->get('dec_point').'"
 data-thousands_sep="'.$language->get('thousands_sep').'"

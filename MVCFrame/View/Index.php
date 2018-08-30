@@ -111,6 +111,14 @@
                                 <small class="form-text text-muted">en, da, en_US</small>
                             </div>
                             <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="default" value="1" id="formDefault">
+                                    <label class="form-check-label" for="formDefault">
+                                        Default
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="formName">Name</label>
                                 <input type="text" id="formName" name="name" class="form-control">
                                 <small class="form-text text-muted">English, Dansk</small>

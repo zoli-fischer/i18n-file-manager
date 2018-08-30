@@ -5,21 +5,24 @@
             "prular_rule": 1,
             "dec_point": ".",
             "thousands_sep": ".",
-            "date_format": "d.m.Y"
+            "date_format": "d.m.Y",
+            "default": true
         },
         "da_DK": {
             "name": "Danish",
             "prular_rule": 1,
-            "dec_point": ".",
+            "dec_point": ",",
             "thousands_sep": ".",
-            "date_format": "d.m.Y"
+            "date_format": "d.m.Y",
+            "default": false
         },
         "de_DE": {
             "name": "German",
             "prular_rule": 1,
-            "dec_point": ".",
+            "dec_point": ",",
             "thousands_sep": ".",
-            "date_format": "d.m.Y"
+            "date_format": "d.m.Y",
+            "default": false
         }
     }
 }

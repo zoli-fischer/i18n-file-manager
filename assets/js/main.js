@@ -4,6 +4,7 @@ $(document).ready(function(params) {
             modal = $(this),
             data = {
                 index: button.data('index'),
+                default: button.data('default'),
                 name: button.html(),
                 plural_rule: button.data('plural_rule'),
                 dec_point: button.data('dec_point'),
@@ -12,10 +13,13 @@ $(document).ready(function(params) {
             },
             is_edit = $.trim(data.index).length > 0;
 
-        console.log(data);
-
         modal.find('.modal-title').text(is_edit ? 'Edit language' : 'Add language');
-        for (i in data)
-            modal.find('.modal-body *[name="' + i + '"]').val(is_edit ? data[i] : '');
+        for (i in data) {
+            if (modal.find('.modal-body *[name="' + i + '"]').attr('type') === 'checkbox') {
+                modal.find('.modal-body *[name="' + i + '"]').prop('checked', modal.find('.modal-body *[name="' + i + '"]').val() == data[i]);
+            } else {
+                modal.find('.modal-body *[name="' + i + '"]').val(is_edit ? data[i] : '');
+            }
+        }
     });
 });
