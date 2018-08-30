@@ -14,10 +14,15 @@ class Controller {
         $this->view = MVCFrame\StringFormatter::ToCamelCase($view);
         $this->viewpath = realpath(__DIR__ . '/View/'. $this->view . '.php');
         if ( file_exists($this->viewpath) ) {
+            if ( isset($_POST['command']) )
+                $this->HandleCommandPost($_POST['command']);
             include( $this->viewpath );
         } else {
             MVCFrame\App::TriggerError('Unable to load view: '.$this->viewpath, E_USER_ERROR);
         }
+    }
+
+    public function HandleCommandPost($command) {
     }
 
     public function GetOptions() {

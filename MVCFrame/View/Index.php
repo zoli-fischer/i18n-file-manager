@@ -69,7 +69,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="helpModalLabel">Help </h5>
+                    <h5 class="modal-title">Help </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -98,13 +98,15 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addLanguageModalLabel">Add language </h5>
+                    <h5 class="modal-title">Add language </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form method="post" action="<?=MVCFrame\Url::GetBaseUrl()?>">
+                            <input type="hidden" name="command" value="">
+                            <input type="hidden" name="real_index" value="">
                             <div class="form-group">
                                 <label for="formIndex">Index</label>
                                 <input type="text" id="formIndex" name="index" class="form-control">
@@ -125,12 +127,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="formPrularRule">Plural rule</label>
-                                <select class="form-control" id="formPrularRule" name="plural_rule">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <select class="form-control" id="formPrularRule" name="prular_rule">
+                                    <option value="0">Asian (Chinese, Japanese, Korean), Persian, Turkic/Altaic (Turkish), Thai, Lao</option>
+                                    <option value="1">Germanic (Danish, Dutch, English, Faroese, Frisian, German, Norwegian, Swedish), Finno-Ugric (Estonian, Finnish, Hungarian), Language isolate (Basque), Latin/Greek (Greek), Semitic (Hebrew), Romanic (Italian, Portuguese, Spanish, Catalan), Vietnamese</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -149,8 +148,36 @@
                         </form>
                     </div>
                     <div class="modal-footer">
+                    <button type="button" class="btn btn-danger mr-auto" data-index="" data-dismiss="modal" data-toggle="modal" data-target="#deleteLanguageModal">Delete</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="deleteLanguageModal" tabindex="-1" role="dialog" aria-labelledby="deleteLanguageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete language: <code></code></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="<?=MVCFrame\Url::GetBaseUrl()?>">
+                            <input type="hidden" name="command" value="delete-language">
+                            <div class="form-group">
+                                <label for="formIndex">Please type in the language index you want to delete</label>
+                                <input type="text" id="formIndex" name="index" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Add</button>
                 </div>
             </div>
         </div>

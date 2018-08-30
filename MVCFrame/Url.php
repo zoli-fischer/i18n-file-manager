@@ -23,7 +23,7 @@ class Url {
         $version = filemtime($filepath);
         $url = str_replace(dirname(realpath($_SERVER['SCRIPT_FILENAME'])), '', $filepath);
         array_shift($url_parts);
-        return rtrim(MVCFrame\Url::GetBaseUrl(),'/').$url.( count($url_parts) > 0 ? '?'.implode('?',$url_parts) : '' ).( count($url_parts) > 0 ? '&' : '?' ).'recache='.$version;
+        return rtrim(self::GetBaseUrl(),'/').$url.( count($url_parts) > 0 ? '?'.implode('?',$url_parts) : '' ).( count($url_parts) > 0 ? '&' : '?' ).'recache='.$version;
     }
 
 }
